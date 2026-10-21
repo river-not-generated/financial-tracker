@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c2rt2lth6yjsi"]
+
+[ext_resource type="Script" uid="uid://b57jnkag88lfj" path="res://App/MainMenu/MainMenu.cs" id="1_bwabq"]
+[ext_resource type="PackedScene" uid="uid://7gyag1fhmybi" path="res://App/FinancialGoals/financial_goals.tscn" id="2_gxhgq"]
+
+[node name="MainMenu" type="Control" unique_id=1430492934]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_bwabq")
+
+[node name="Button" type="Button" parent="." unique_id=958714247]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 45.0
+
+[node name="FinancialGoals" parent="." unique_id=1366825782 instance=ExtResource("2_gxhgq")]
+layout_mode = 1
+offset_left = 241.0
+offset_top = 92.0
+offset_right = -444.0
+offset_bottom = 92.0
+
+[connection signal="pressed" from="Button" to="." method="_OnButtonPressed"]
