@@ -26,6 +26,6 @@ public partial class MainMenu : Control
 
 	public void _OnButtonPressed()
 	{
-		GD.Print("button pressed!!!");
+		Scenes.Instance.Swap("Financial Tracker");
 	}
 }

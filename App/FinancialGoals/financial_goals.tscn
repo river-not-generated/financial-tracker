@@ -17,3 +17,10 @@ layout_mode = 0
 offset_right = 467.0
 offset_bottom = 648.0
 text = "wkuffewkuhuwqEEjHESfesjfeskjsfdsnhkjfndsjkjdsfjdsfsdkjfbskjdfbkjsdbfmjbdsfmjbdsbkjdsbfkjdsbfkjfkjbfkjbfkjbfkjbfkjdsbfffmdbf"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=938911956]
+z_index = -1
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+color = Color(1, 0, 1, 1)

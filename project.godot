@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+Scenes="*uid://b66o1keo7luuo"
+
 [display]
 
 window/stretch/mode="viewport"
