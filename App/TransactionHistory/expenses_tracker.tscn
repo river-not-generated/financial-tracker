@@ -38,31 +38,73 @@ offset_right = 776.0
 offset_bottom = 171.0
 color = Color(0.41960785, 0.5764706, 0, 1)
 
-[node name="Button" type="Button" parent="." unique_id=1904711039]
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=1310663793]
 layout_mode = 0
-offset_left = 345.0
-offset_top = 7.0
-offset_right = 451.0
-offset_bottom = 73.0
+offset_top = 12.0
+offset_right = 1152.0
+offset_bottom = 78.0
+theme_override_constants/separation = 67
+alignment = 1
+
+[node name="MainMenu" type="Button" parent="Buttons" unique_id=1904711039]
+layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Main Menu"
 
-[node name="Button3" type="Button" parent="." unique_id=1207892648]
-layout_mode = 0
-offset_left = 493.0
-offset_top = 7.0
-offset_right = 690.0
-offset_bottom = 73.0
+[node name="FinancialGoals" type="Button" parent="Buttons" unique_id=648075432]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Financial Goals
+"
+
+[node name="TransactionHistory" type="Button" parent="Buttons" unique_id=1207892648]
+layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Transaction History
 "
 
-[node name="Button2" type="Button" parent="." unique_id=648075432]
+[node name="ExpensesInput" type="Control" parent="." unique_id=38059478]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoneyInput" type="LineEdit" parent="ExpensesInput" unique_id=19977290]
 layout_mode = 0
-offset_left = 727.0
-offset_top = 7.0
-offset_right = 851.0
-offset_bottom = 73.0
+offset_left = 445.0
+offset_top = 219.0
+offset_right = 707.0
+offset_bottom = 282.0
+theme_override_font_sizes/font_size = 32
+text = "0.00"
+alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ExpensesInput/MoneyInput" unique_id=1262527782]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -17.0
+offset_right = 14.0
+offset_bottom = 75.0
+theme_override_font_sizes/normal_font_size = 64
+text = "$"
+
+[node name="DescriptionInput" type="LineEdit" parent="ExpensesInput" unique_id=989463425]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 287.0
+offset_right = 693.0
+offset_bottom = 323.0
 theme_override_font_sizes/font_size = 20
-text = "Financial Goals
-"
+text = "Description"
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=89094990]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 328.0
+offset_right = 876.0
+offset_bottom = 401.0
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[u]Recent Transactions"
+horizontal_alignment = 1
+vertical_alignment = 1
