@@ -8,6 +8,7 @@ public partial class Scenes : Node
 
     public override void _Ready() { Instance = this; }
 
+	// To get a scene's UID, right-click on the .tscn file and press "Copy UID".
 	public Dictionary SceneDict = new Dictionary
 	{
 		{ "Main Menu",		   GD.Load("uid://c2rt2lth6yjsi") },
