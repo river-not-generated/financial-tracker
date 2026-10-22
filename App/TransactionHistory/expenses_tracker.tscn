@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://beq75aery53ui"]
+
+[node name="ExpensesTracker" type="Control" unique_id=1937945006]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=1980009297]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.1608041, 0.19435754, 0.30922577, 1)
+
+[node name="TotalMoney" type="Control" parent="." unique_id=992246102]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TotalMoney" type="RichTextLabel" parent="TotalMoney" unique_id=214821675]
+z_index = 1
+layout_mode = 0
+offset_top = 96.0
+offset_right = 1152.0
+offset_bottom = 170.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Total Money: $-1,000.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoneyBackground" type="ColorRect" parent="TotalMoney" unique_id=1663595471]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 96.0
+offset_right = 776.0
+offset_bottom = 171.0
+color = Color(0.41960785, 0.5764706, 0, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1904711039]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 7.0
+offset_right = 451.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"
+
+[node name="Button3" type="Button" parent="." unique_id=1207892648]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 7.0
+offset_right = 690.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 20
+text = "Transaction History
+"
+
+[node name="Button2" type="Button" parent="." unique_id=648075432]
+layout_mode = 0
+offset_left = 727.0
+offset_top = 7.0
+offset_right = 851.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 20
+text = "Financial Goals
+"
