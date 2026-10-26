@@ -15,8 +15,4 @@ public partial class Login : Control
 
 	}
 
-	public void OnMenuButtonPressed()
-	{
-		Scenes.Instance.Swap("Main Menu");
-	}
 }

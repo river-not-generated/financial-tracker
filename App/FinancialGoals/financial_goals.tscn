@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7gyag1fhmybi"]
 
 [ext_resource type="Script" uid="uid://bde5g2tc4wsx1" path="res://App/FinancialGoals/FinancialGoals.cs" id="1_xvlw6"]
+[ext_resource type="Script" uid="uid://bbmdu5hqwt1yn" path="res://_Assets/Scripts/SceneButton.cs" id="2_cgnxp"]
 
 [node name="FinancialGoals" type="Control" unique_id=1366825782]
 layout_mode = 3
@@ -29,5 +30,4 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Back To Menu"
-
-[connection signal="pressed" from="MainMenuButton" to="." method="OnMenuButtonPressed"]
+script = ExtResource("2_cgnxp")

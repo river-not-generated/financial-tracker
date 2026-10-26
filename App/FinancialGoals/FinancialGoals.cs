@@ -12,8 +12,5 @@ public partial class FinancialGoals : Control
 	public override void _Process(double delta)
 	{
 	}
-	public void OnMenuButtonPressed()
-	{
-		Scenes.Instance.Swap("Main Menu");
-	}
+	
 }

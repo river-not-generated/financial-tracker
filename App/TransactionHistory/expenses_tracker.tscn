@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://beq75aery53ui"]
 
 [ext_resource type="Script" uid="uid://ei4hs8ys0mrc" path="res://App/TransactionHistory/ExpensesTracker.cs" id="1_yt8mb"]
+[ext_resource type="Script" uid="uid://bbmdu5hqwt1yn" path="res://_Assets/Scripts/SceneButton.cs" id="2_fn7yj"]
 
 [node name="ExpensesTracker" type="Control" unique_id=1937945006]
 layout_mode = 3
@@ -53,18 +54,23 @@ alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Main Menu"
+script = ExtResource("2_fn7yj")
 
 [node name="FinancialGoals" type="Button" parent="Buttons" unique_id=648075432]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Financial Goals
 "
+script = ExtResource("2_fn7yj")
+SceneGoTo = "Financial Goals"
 
 [node name="TransactionHistory" type="Button" parent="Buttons" unique_id=1207892648]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Transaction History
 "
+script = ExtResource("2_fn7yj")
+SceneGoTo = "Transaction History"
 
 [node name="ExpensesInput" type="Control" parent="." unique_id=38059478]
 anchors_preset = 0
@@ -118,5 +124,3 @@ offset_left = 316.0
 offset_top = 385.0
 offset_right = 837.0
 offset_bottom = 630.0
-
-[connection signal="pressed" from="Buttons/MainMenu" to="." method="OnMenuButtonPressed"]

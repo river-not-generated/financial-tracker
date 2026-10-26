@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cc0h5aorihwfb"]
 
 [ext_resource type="Script" uid="uid://c5inrf2esrphd" path="res://App/Login/Login.cs" id="1_8nbqb"]
+[ext_resource type="Script" uid="uid://bbmdu5hqwt1yn" path="res://_Assets/Scripts/SceneButton.cs" id="2_rklxj"]
 
 [node name="Login" type="Control" unique_id=1045227086]
 layout_mode = 3
@@ -14,5 +15,4 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Back To Menu"
-
-[connection signal="pressed" from="MainMenuButton" to="." method="OnMenuButtonPressed"]
+script = ExtResource("2_rklxj")
