@@ -79,9 +79,9 @@ offset_bottom = 40.0
 
 [node name="MoneyInput" type="LineEdit" parent="ExpensesInput" unique_id=19977290]
 layout_mode = 0
-offset_left = 445.0
+offset_left = 406.0
 offset_top = 219.0
-offset_right = 707.0
+offset_right = 668.0
 offset_bottom = 282.0
 theme_override_font_sizes/font_size = 32
 text = "0.00"
@@ -90,17 +90,17 @@ alignment = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="ExpensesInput/MoneyInput" unique_id=1262527782]
 layout_mode = 0
 offset_left = -40.0
-offset_top = -17.0
+offset_top = -7.0
 offset_right = 14.0
-offset_bottom = 75.0
+offset_bottom = 68.0
 theme_override_font_sizes/normal_font_size = 64
 text = "$"
 
 [node name="DescriptionInput" type="LineEdit" parent="ExpensesInput" unique_id=989463425]
 layout_mode = 0
-offset_left = 459.0
+offset_left = 447.0
 offset_top = 287.0
-offset_right = 693.0
+offset_right = 681.0
 offset_bottom = 323.0
 theme_override_font_sizes/font_size = 20
 text = "Description"
@@ -124,3 +124,19 @@ offset_left = 316.0
 offset_top = 385.0
 offset_right = 837.0
 offset_bottom = 630.0
+
+[node name="DepositButton" type="Button" parent="." unique_id=732463541]
+layout_mode = 0
+offset_left = 675.0
+offset_top = 221.0
+offset_right = 782.0
+offset_bottom = 248.0
+text = "Deposit"
+
+[node name="WithdrawButton" type="Button" parent="." unique_id=600143687]
+layout_mode = 0
+offset_left = 675.0
+offset_top = 252.0
+offset_right = 782.0
+offset_bottom = 279.0
+text = "Withdraw"
