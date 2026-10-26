@@ -17,11 +17,11 @@ public partial class MainMenu : Control
 	public override void _Process(double delta)
 	{
 		// Example of input and printing
-        if (Input.IsActionJustPressed("q"))
-        {
-            GD.Print("q!!!");
-        }
-    }
+		if (Input.IsActionJustPressed("q"))
+		{
+			GD.Print("q!!!");
+		}
+	}
 
 	public void _OnButtonPressed()
 	{
