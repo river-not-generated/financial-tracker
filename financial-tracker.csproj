@@ -5,4 +5,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>financialtracker</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="_Globals\Data\" />
+  </ItemGroup>
 </Project>
