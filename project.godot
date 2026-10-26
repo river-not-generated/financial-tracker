@@ -35,6 +35,10 @@ folder_colors={
 "res://_Assets/": "gray"
 }
 
+[gui]
+
+theme/custom_font="uid://m7gkqaoyhbrp"
+
 [input]
 
 q={
