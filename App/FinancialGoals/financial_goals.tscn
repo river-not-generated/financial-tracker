@@ -23,7 +23,7 @@ z_index = -1
 layout_mode = 0
 offset_right = 1151.0
 offset_bottom = 648.0
-color = Color(1, 0, 1, 1)
+color = Color(0.1608041, 0.19435754, 0.30922577, 1)
 
 [node name="MainMenuButton" type="Button" parent="." unique_id=1657967588]
 layout_mode = 0

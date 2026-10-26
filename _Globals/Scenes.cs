@@ -14,7 +14,7 @@ public partial class Scenes : Node
 		{ "Main Menu",		     GD.Load("uid://c2rt2lth6yjsi") },
 		{ "Financial Goals",     GD.Load("uid://7gyag1fhmybi")  },
 		{ "Login",               GD.Load("uid://cc0h5aorihwfb") },
-		{ "Transaction History", GD.Load("uid://beq75aery53ui") },
+		{ "Expenses Tracker",    GD.Load("uid://beq75aery53ui") },
 		//{ "Scene Name",      GD.Load("SCENE_UID") },
 		//{ "Scene Name",      GD.Load("SCENE_UID") },
 		//{ "Scene Name",      GD.Load("SCENE_UID") },
