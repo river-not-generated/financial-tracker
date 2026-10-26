@@ -97,7 +97,7 @@ theme_override_font_sizes/font_size = 20
 text = "Description"
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=89094990]
+[node name="TransctionsLabel" type="RichTextLabel" parent="." unique_id=89094990]
 layout_mode = 0
 offset_left = 257.0
 offset_top = 328.0
@@ -108,3 +108,10 @@ bbcode_enabled = true
 text = "[u]Recent Transactions"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TransactionsContainer" type="VBoxContainer" parent="." unique_id=942806704]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 385.0
+offset_right = 837.0
+offset_bottom = 630.0
