@@ -25,6 +25,6 @@ public partial class MainMenu : Control
 
 	public void _OnButtonPressed()
 	{
-		Scenes.Instance.Swap("Financial Tracker");
+		Scenes.Instance.Swap("Financial Goals");
 	}
 }

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://beq75aery53ui"]
 
+[ext_resource type="Script" uid="uid://ei4hs8ys0mrc" path="res://App/TransactionHistory/ExpensesTracker.cs" id="1_yt8mb"]
+
 [node name="ExpensesTracker" type="Control" unique_id=1937945006]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yt8mb")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1980009297]
 layout_mode = 0
@@ -115,3 +118,5 @@ offset_left = 316.0
 offset_top = 385.0
 offset_right = 837.0
 offset_bottom = 630.0
+
+[connection signal="pressed" from="Buttons/MainMenu" to="." method="OnMenuButtonPressed"]

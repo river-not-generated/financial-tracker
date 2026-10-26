@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://7gyag1fhmybi"]
 
-[ext_resource type="Script" uid="uid://bifts1283hl2l" path="res://App/FinancialGoals/financial_goals.gd" id="1_xvlw6"]
+[ext_resource type="Script" uid="uid://bde5g2tc4wsx1" path="res://App/FinancialGoals/FinancialGoals.cs" id="1_xvlw6"]
 
 [node name="FinancialGoals" type="Control" unique_id=1366825782]
 layout_mode = 3
@@ -16,7 +16,6 @@ script = ExtResource("1_xvlw6")
 layout_mode = 0
 offset_right = 467.0
 offset_bottom = 648.0
-text = "wkuffewkuhuwqEEjHESfesjfeskjsfdsnhkjfndsjkjdsfjdsfsdkjfbskjdfbkjsdbfmjbdsfmjbdsbkjdsbfkjdsbfkjfkjbfkjbfkjbfkjbfkjdsbfffmdbf"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=938911956]
 z_index = -1
@@ -24,3 +23,11 @@ layout_mode = 0
 offset_right = 1151.0
 offset_bottom = 648.0
 color = Color(1, 0, 1, 1)
+
+[node name="MainMenuButton" type="Button" parent="." unique_id=1657967588]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back To Menu"
+
+[connection signal="pressed" from="MainMenuButton" to="." method="OnMenuButtonPressed"]
