@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://beq75aery53ui"]
 
-[ext_resource type="Script" uid="uid://ei4hs8ys0mrc" path="res://App/TransactionHistory/ExpensesTracker.cs" id="1_yt8mb"]
-[ext_resource type="Script" uid="uid://bbmdu5hqwt1yn" path="res://_Assets/Scripts/SceneButton.cs" id="2_fn7yj"]
+[ext_resource type="Script" uid="uid://ei4hs8ys0mrc" path="res://App/ExpensesTracker/ExpensesTracker.cs" id="1_4g107"]
+[ext_resource type="Script" uid="uid://bbmdu5hqwt1yn" path="res://_Assets/Scripts/SceneButton.cs" id="2_i8s8o"]
 
 [node name="ExpensesTracker" type="Control" unique_id=1937945006]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_yt8mb")
+script = ExtResource("1_4g107")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1980009297]
 layout_mode = 0
@@ -54,14 +54,14 @@ alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Main Menu"
-script = ExtResource("2_fn7yj")
+script = ExtResource("2_i8s8o")
 
 [node name="FinancialGoals" type="Button" parent="Buttons" unique_id=648075432]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Financial Goals
 "
-script = ExtResource("2_fn7yj")
+script = ExtResource("2_i8s8o")
 SceneGoTo = "Financial Goals"
 
 [node name="TransactionHistory" type="Button" parent="Buttons" unique_id=1207892648]
@@ -69,7 +69,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Transaction History
 "
-script = ExtResource("2_fn7yj")
+script = ExtResource("2_i8s8o")
 SceneGoTo = "Transaction History"
 
 [node name="ExpensesInput" type="Control" parent="." unique_id=38059478]
