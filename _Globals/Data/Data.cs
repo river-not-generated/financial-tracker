@@ -59,8 +59,6 @@ public partial class Data : Node
 	// Transactions
 	public Transaction GetTransaction(int index)
 	{
-
-
 		return (Transaction)((Godot.Collections.Array)userData["financial history"])[index];
 	}
 
@@ -72,5 +70,11 @@ public partial class Data : Node
 	public void RemoveTransaction(int index)
 	{
 		((Godot.Collections.Array)userData["financial history"]).RemoveAt(index);
+	}
+
+	public int GetTotalTransactions()
+	{
+		return ((Godot.Collections.Array)userData["financial history"]).Count;
+
 	}
 }
