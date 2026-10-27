@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ei4hs8ys0mrc" path="res://App/ExpensesTracker/ExpensesTracker.cs" id="1_4g107"]
 [ext_resource type="Script" uid="uid://bbmdu5hqwt1yn" path="res://_Assets/Scripts/SceneButton.cs" id="2_i8s8o"]
-[ext_resource type="PackedScene" uid="uid://d1mxx6encsk7h" path="res://App/TransactionHistory/TransactionContainer/transaction_container.tscn" id="3_i8s8o"]
 
 [node name="ExpensesTracker" type="Control" unique_id=1937945006]
 layout_mode = 3
@@ -141,10 +140,3 @@ offset_top = 252.0
 offset_right = 782.0
 offset_bottom = 279.0
 text = "Withdraw"
-
-[node name="TransactionContainer" parent="." unique_id=2052169163 instance=ExtResource("3_i8s8o")]
-layout_mode = 0
-offset_left = 298.0
-offset_top = 403.0
-offset_right = 818.0
-offset_bottom = 463.0
