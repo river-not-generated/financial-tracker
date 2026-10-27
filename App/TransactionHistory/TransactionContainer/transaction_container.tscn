@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dggd66enm76gw" path="res://App/TransactionHistory/TransactionContainer/transaction_container.gd" id="1_43c7u"]
 
 [node name="TransactionContainer" type="Panel" unique_id=2052169163]
+custom_minimum_size = Vector2(520, 60)
 offset_right = 520.0
 offset_bottom = 60.0
 script = ExtResource("1_43c7u")
