@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c2rt2lth6yjsi"]
 
 [ext_resource type="Script" uid="uid://b57jnkag88lfj" path="res://App/MainMenu/MainMenu.cs" id="1_bwabq"]
+[ext_resource type="Script" uid="uid://bbmdu5hqwt1yn" path="res://_Assets/Scripts/SceneButton.cs" id="2_gxhgq"]
 
 [node name="MainMenu" type="Control" unique_id=1430492934]
 layout_mode = 3
@@ -12,14 +13,60 @@ script = ExtResource("1_bwabq")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=448506437]
 z_index = -1
 layout_mode = 0
-offset_top = 40.0
-offset_right = 1108.0
+offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0, 1, 0, 1)
+color = Color(0.1608041, 0.19435754, 0.30922577, 1)
 
-[node name="Button" type="Button" parent="." unique_id=958714247]
+[node name="FGoalsButton" type="Button" parent="." unique_id=958714247]
 layout_mode = 0
-offset_right = 181.0
-offset_bottom = 45.0
+offset_left = 224.0
+offset_top = 374.0
+offset_right = 405.0
+offset_bottom = 419.0
+text = "Financial Goals"
+script = ExtResource("2_gxhgq")
+SceneGoTo = "Financial Goals"
 
-[connection signal="pressed" from="Button" to="." method="_OnButtonPressed"]
+[node name="LoginButton" type="Button" parent="." unique_id=2020768044]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 374.0
+offset_right = 663.0
+offset_bottom = 419.0
+text = "Transaction History"
+script = ExtResource("2_gxhgq")
+SceneGoTo = "Transaction History"
+
+[node name="LoginButton2" type="Button" parent="." unique_id=1422277159]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 509.0
+offset_right = 663.0
+offset_bottom = 554.0
+text = "Back To Login"
+script = ExtResource("2_gxhgq")
+SceneGoTo = "Login"
+
+[node name="ETrackerButton" type="Button" parent="." unique_id=944859916]
+layout_mode = 0
+offset_left = 747.0
+offset_top = 374.0
+offset_right = 928.0
+offset_bottom = 419.0
+text = "Expenses Tracker"
+script = ExtResource("2_gxhgq")
+SceneGoTo = "Expenses Tracker"
+
+[node name="Label" type="Label" parent="." unique_id=87741271]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 153.0
+offset_right = 725.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 128
+text = "wafüb"
+
+[connection signal="pressed" from="FGoalsButton" to="." method="_OnButtonPressed"]
+[connection signal="pressed" from="LoginButton" to="." method="_OnButtonPressed"]
+[connection signal="pressed" from="LoginButton2" to="." method="_OnButtonPressed"]
+[connection signal="pressed" from="ETrackerButton" to="." method="_OnButtonPressed"]
