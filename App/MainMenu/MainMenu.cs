@@ -8,9 +8,7 @@ public partial class MainMenu : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		// Example of getting a button and moving it 50 pixels to the right.
-		button = GetNode<Button>("Button");
-		GetNode<Button>("Button").Position += new Vector2(50, 0);
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +18,10 @@ public partial class MainMenu : Control
 		if (Input.IsActionJustPressed("q"))
 		{
 			GD.Print("q!!!");
+			Data.Instance.AddTransaction(new Data.Transaction(Time.GetDatetimeStringFromSystem(false), 12.02, "Transaction description."));
+			Data.Instance.Print();
+			Data.Instance.RemoveTransaction(0);
+			Data.Instance.Print();
 		}
 	}
 
