@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d1mxx6encsk7h"]
+
+[ext_resource type="Script" uid="uid://dggd66enm76gw" path="res://App/TransactionHistory/TransactionContainer/transaction_container.gd" id="1_43c7u"]
+
+[node name="TransactionContainer" type="Panel" unique_id=2052169163]
+offset_right = 520.0
+offset_bottom = 60.0
+script = ExtResource("1_43c7u")
+
+[node name="Amount" type="RichTextLabel" parent="." unique_id=227092670]
+layout_mode = 0
+offset_left = 291.0
+offset_right = 515.0
+offset_bottom = 59.0
+theme_override_font_sizes/normal_font_size = 32
+text = "$-10,000.01"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DescriptionContainer" type="ReferenceRect" parent="." unique_id=1520749773]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 291.0
+offset_bottom = 59.0
+border_color = Color(0.00020232363, 0.016891198, 0.18358624, 1)
+
+[node name="DescHeader" type="RichTextLabel" parent="DescriptionContainer" unique_id=1193596136]
+layout_mode = 0
+offset_right = 290.0
+offset_bottom = 19.0
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[u]Description"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="DescriptionContainer" unique_id=1875973130]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 19.0
+offset_right = 287.0
+offset_bottom = 57.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
