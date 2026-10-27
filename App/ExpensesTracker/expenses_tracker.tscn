@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://ei4hs8ys0mrc" path="res://App/ExpensesTracker/ExpensesTracker.cs" id="1_4g107"]
 [ext_resource type="Script" uid="uid://bbmdu5hqwt1yn" path="res://_Assets/Scripts/SceneButton.cs" id="2_i8s8o"]
 
+[sub_resource type="Theme" id="Theme_bup6r"]
+default_font_size = 32
+
 [node name="ExpensesTracker" type="Control" unique_id=1937945006]
 layout_mode = 3
 anchors_preset = 15
@@ -77,25 +80,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MoneyInput" type="LineEdit" parent="ExpensesInput" unique_id=19977290]
-layout_mode = 0
-offset_left = 406.0
-offset_top = 219.0
-offset_right = 668.0
-offset_bottom = 282.0
-theme_override_font_sizes/font_size = 32
-text = "0.00"
-alignment = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ExpensesInput/MoneyInput" unique_id=1262527782]
-layout_mode = 0
-offset_left = -40.0
-offset_top = -7.0
-offset_right = 14.0
-offset_bottom = 68.0
-theme_override_font_sizes/normal_font_size = 64
-text = "$"
-
 [node name="DescriptionInput" type="LineEdit" parent="ExpensesInput" unique_id=989463425]
 layout_mode = 0
 offset_left = 447.0
@@ -103,8 +87,28 @@ offset_top = 287.0
 offset_right = 681.0
 offset_bottom = 323.0
 theme_override_font_sizes/font_size = 20
-text = "Description"
+placeholder_text = "Description"
 alignment = 1
+
+[node name="MoneyInput" type="SpinBox" parent="ExpensesInput" unique_id=1133579278]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 218.0
+offset_right = 671.0
+offset_bottom = 280.0
+theme = SubResource("Theme_bup6r")
+max_value = 1000000.0
+step = 0.01
+alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ExpensesInput/MoneyInput" unique_id=1262527782]
+layout_mode = 0
+offset_left = -46.0
+offset_top = -7.0
+offset_right = 8.0
+offset_bottom = 68.0
+theme_override_font_sizes/normal_font_size = 64
+text = "$"
 
 [node name="TransctionsLabel" type="RichTextLabel" parent="." unique_id=89094990]
 layout_mode = 0
@@ -140,3 +144,6 @@ offset_top = 252.0
 offset_right = 782.0
 offset_bottom = 279.0
 text = "Withdraw"
+
+[connection signal="pressed" from="DepositButton" to="." method="_OnDepositPressed"]
+[connection signal="pressed" from="WithdrawButton" to="." method="_OnWithdrawPressed"]
