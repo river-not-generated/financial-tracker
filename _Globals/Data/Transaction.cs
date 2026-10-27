@@ -3,6 +3,12 @@ using System;
 
 public partial class Transaction : Resource
 {
+	public Transaction(double money, string description)
+	{
+		this.date = Time.GetDatetimeStringFromSystem(false);
+		this.money = money;
+		this.description = description;
+	}
 	public Transaction(string date, double money, string description)
 	{
 		this.date = date;
