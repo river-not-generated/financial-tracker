@@ -12,7 +12,36 @@ public partial class Login : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-
+		//this is called each frame btw, this is for all the called each frame heads out there
 	}
+	
+	public void _on_button_pressed()
+	{
+		var usernameInput = GetNode<LineEdit>("UsernameInput");
+		var passwordInput = GetNode<LineEdit>("PasswordInput");
 
+		if (!string.IsNullOrEmpty(usernameInput.Text) && !string.IsNullOrEmpty(passwordInput.Text))
+		{
+			if (usernameInput.Text == "ben") //check if the username exists
+			{
+				if (passwordInput.Text == "sux") //check if the password matches the username
+				{
+					//login!!!!
+					Scenes.Instance.Swap("Main Menu");
+					GD.Print("YAYYYYYYYYY");
+				}
+			}
+			else
+			{
+				//reset the input boxes
+				GD.Print("you mean nothing to everyone"); 
+				usernameInput.Text = string.Empty;
+				passwordInput.Text = string.Empty;
+			}
+		}
+		else
+		{
+			GD.Print("you fucking suck, die"); //this is just a joke, probably replace this by adding a richtext lable saying invalid username or  stuff
+		}
+	}
 }
