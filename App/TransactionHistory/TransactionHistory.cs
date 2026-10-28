@@ -10,14 +10,6 @@ public partial class TransactionHistory : Node
 		// show the transaction details, starting with the most recent and ending with the least recent
 		VBoxContainer transactionContainer = GetNode<VBoxContainer>("Transactions/TransactionsVBox");
 
-		Data.Instance.AddTransaction(new Transaction(30.03, "test"));
-		Data.Instance.AddTransaction(new Transaction(30.03, "test"));
-		Data.Instance.AddTransaction(new Transaction(30.03, "test"));
-		Data.Instance.AddTransaction(new Transaction(30.03, "test"));
-		Data.Instance.AddTransaction(new Transaction(30.03, "test"));
-		Data.Instance.AddTransaction(new Transaction(30.03, "test"));
-		Data.Instance.AddTransaction(new Transaction(30.03, "test"));
-
 		for (int i = Data.Instance.GetTotalTransactions() - 1; i >= 0; i--)
 		{
 			Transaction trans = Data.Instance.GetTransaction(i);
