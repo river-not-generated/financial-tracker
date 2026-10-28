@@ -36,7 +36,7 @@ offset_right = 654.0
 offset_bottom = 280.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1dy3r")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_1dy3r")
-placeholder_text = "Login"
+placeholder_text = "Username"
 alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="UsernameInput" unique_id=470312058]
@@ -72,5 +72,6 @@ offset_left = 501.0
 offset_top = 375.0
 offset_right = 654.0
 offset_bottom = 413.0
+text = "Log in"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

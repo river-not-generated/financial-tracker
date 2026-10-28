@@ -27,7 +27,7 @@ text = "Financial Goals"
 script = ExtResource("2_gxhgq")
 SceneGoTo = "Financial Goals"
 
-[node name="LoginButton" type="Button" parent="." unique_id=2020768044]
+[node name="TransactionHistory" type="Button" parent="." unique_id=2020768044]
 layout_mode = 0
 offset_left = 482.0
 offset_top = 374.0
@@ -37,7 +37,7 @@ text = "Transaction History"
 script = ExtResource("2_gxhgq")
 SceneGoTo = "Transaction History"
 
-[node name="LoginButton2" type="Button" parent="." unique_id=1422277159]
+[node name="LoginButton" type="Button" parent="." unique_id=1422277159]
 layout_mode = 0
 offset_left = 482.0
 offset_top = 509.0
@@ -67,6 +67,6 @@ theme_override_font_sizes/font_size = 128
 text = "wafüb"
 
 [connection signal="pressed" from="FGoalsButton" to="." method="_OnButtonPressed"]
+[connection signal="pressed" from="TransactionHistory" to="." method="_OnButtonPressed"]
 [connection signal="pressed" from="LoginButton" to="." method="_OnButtonPressed"]
-[connection signal="pressed" from="LoginButton2" to="." method="_OnButtonPressed"]
 [connection signal="pressed" from="ETrackerButton" to="." method="_OnButtonPressed"]

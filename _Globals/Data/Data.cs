@@ -1,11 +1,5 @@
 using Godot;
 using Godot.Collections;
-using Microsoft.VisualBasic;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 public partial class Data : Node
 {
@@ -22,7 +16,7 @@ public partial class Data : Node
 		{"username",		  ""},
 		{"password",		  ""},
 		{"money",			  0.0},
-		{"financial history", new Godot.Collections.Array()}
+		{"financial history", new Array()}
 	};
 	public void Print()
 	{
@@ -46,41 +40,57 @@ public partial class Data : Node
 	#region Transactions
 	public Transaction GetTransaction(int index)
 	{
-		return (Transaction)((Godot.Collections.Array)userData["financial history"])[index];
+		// Grabs the "financial history" from userData.
+		// Casts "financial history" into a Godot.Collections.Array.
+		// Retrieves the item at the requested index.
+		// Casts the item into a Transaction.
+		return (Transaction)((Array)userData["financial history"])[index];
 	}
 
 	public void AddTransaction(Transaction transaction)
 	{
-		((Godot.Collections.Array)userData["financial history"]).Add(transaction);
+		// Grabs the "financial history" from userData.
+		// Casts "financial history" into a Godot.Collections.Array.
+		// Calls "Add()" on the "financial history" array.
+		((Array)userData["financial history"]).Add(transaction);
 	}
 
 	public void RemoveTransaction(int index)
 	{
-		((Godot.Collections.Array)userData["financial history"]).RemoveAt(index);
+		// View AddTransaction comments
+		((Array)userData["financial history"]).RemoveAt(index);
 	}
 
 	public int GetTotalTransactions()
 	{
-		return ((Godot.Collections.Array)userData["financial history"]).Count;
+		// View AddTransaction comments
+		return ((Array)userData["financial history"]).Count;
 
 	}
 	#endregion transactions
 	#endregion data
 
 
-	#region Saving
+	#region Saving & Loading
 	public void Save(string username, string password)
 	{
+		// Duplicates the dictionary.
+		// Grabs the current "financial history" and puts into a temporary array.
+		// Creates the new "financial history" array.
 		Dictionary dict = userData.Duplicate();
 		Array temp = (Array)userData["financial history"];
 		Array financialHistory = [];
 
+		// Iterates through temp.
+			// Converts the transactions into dictionaries.
+		// Puts the converted "financial history" into the dictionary.
 		foreach (Transaction item in temp)
-		{
-			financialHistory.Add(((Transaction)item).ToDict());
-		}
+			financialHistory.Add((item).ToDict());
 		dict["financial history"] = financialHistory;
 
+		// Opens the file.
+		// Stores the stringified version of the dictionary.
+		// Closes the file.
 		FileAccess file = FileAccess.OpenEncryptedWithPass($"user://{username}", FileAccess.ModeFlags.Write, password);
 		file.StoreLine(Json.Stringify(dict));
 		file.Close();
@@ -88,27 +98,39 @@ public partial class Data : Node
 
 	public bool Load(string username, string password)
 	{
+		// Loads the file.
+		// Gets the contents of the file.
+		// Parses the file contents.
 		FileAccess file = FileAccess.OpenEncryptedWithPass($"user://{username}", FileAccess.ModeFlags.Read, password);
-
 		string fileContents = file.GetLine();
 		Variant parse = Json.ParseString(fileContents);
+
+		// Checks if the parse failed.
+			// If so, push a warning.
+			// then return false.
 		if (parse.VariantType == Variant.Type.Nil)
 		{
-			GD.Print($"{username} is not saved or the password was incorrect!");
+			GD.PushWarning($"{username} is not saved or the password was incorrect!");
 			return false;
 		}
 
-		Dictionary dict = (Dictionary)parse;
-		Array temp = (Array)dict["financial history"];
+		// Casts the parsed info into the userData dictionary. 
+		// Grabs the current "financial history" and puts into a temporary array.
+		// Creates the new "financial history" array.
+		userData = (Dictionary)parse;
+		Array temp = (Array)userData["financial history"];
 		Array financialHistory = [];
+
+		// Iterates through temp.
+			// Converts the dictionaries into transactions and adds them to the array.
+		// Puts the converted "financial history" into userData.
 		foreach (Dictionary item in temp)
-		{
 			financialHistory.Add(Transaction.FromDict(item));
-		}
-		dict["financial history"] = financialHistory;
+		userData["financial history"] = financialHistory;
 
-		userData = dict;
-
+		// Close the file.
+		// ...
+		// Return true.
 		file.Close();
 		GD.Print($"Succesfully loaded {username}'s data!");
 		return true;

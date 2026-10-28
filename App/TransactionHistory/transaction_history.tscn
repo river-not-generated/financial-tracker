@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0nc0nrjgh48k"]
 
 [ext_resource type="Script" uid="uid://coe67rdixcknv" path="res://App/TransactionHistory/TransactionHistory.cs" id="1_pbeoq"]
+[ext_resource type="Script" uid="uid://bbmdu5hqwt1yn" path="res://_Assets/Scripts/SceneButton.cs" id="2_03suo"]
 
 [node name="TransactionHistory" type="Control" unique_id=1504312876]
 layout_mode = 3
@@ -42,3 +43,10 @@ horizontal_scroll_mode = 0
 custom_minimum_size = Vector2(520, 310)
 layout_mode = 2
 theme_override_constants/separation = 2
+
+[node name="MainMenuButton" type="Button" parent="." unique_id=89811175]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back To Menu"
+script = ExtResource("2_03suo")
