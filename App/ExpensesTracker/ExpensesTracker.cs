@@ -32,24 +32,23 @@ public partial class ExpensesTracker : Control
 
 	public void _OnDepositPressed()
 	{
-		if (moneyBox.Value > 0)
-		{
-			GD.Print($"+${moneyBox.Value} - {(string.IsNullOrWhiteSpace(descBox.Text) ? "No description" : descBox.Text)}");
-			Data.Instance.SetMoney(Data.Instance.GetMoney() + moneyBox.Value);
-
-			descBox.Text = string.Empty;
-			moneyBox.Value = 0;
-		}
-		Data.Instance.Print();
-
+		ParseTransaction(1);
 	}
 
 	public void _OnWithdrawPressed()
 	{
-		if (moneyBox.Value > 0)
+		ParseTransaction(-1);
+	}
+
+	private void ParseTransaction(int mult = -1)
+	{
+		double money = moneyBox.Value;
+		if (money > 0)
 		{
-			GD.Print($"-${moneyBox.Value} - {(string.IsNullOrWhiteSpace(descBox.Text) ? "No description" : descBox.Text)}");
-			Data.Instance.SetMoney(Data.Instance.GetMoney() - moneyBox.Value);
+			string desc = descBox.Text;
+			GD.Print($"${(mult < 1 ? "-" : "+")}{money} - {(string.IsNullOrWhiteSpace(desc) ? "No description" : desc)}");
+			Data.Instance.SetMoney(Data.Instance.GetMoney() + (money * mult));
+			Data.Instance.AddTransaction(new Transaction((money * mult), desc));
 
 			descBox.Text = string.Empty;
 			moneyBox.Value = 0;
