@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dggd66enm76gw" path="res://App/TransactionHistory/TransactionContainer/transaction_container.gd" id="1_43c7u"]
 
 [node name="TransactionContainer" type="Panel" unique_id=2052169163]
-custom_minimum_size = Vector2(520, 60)
+custom_minimum_size = Vector2(520, 85)
 offset_right = 520.0
 offset_bottom = 85.0
 script = ExtResource("1_43c7u")
@@ -47,9 +47,9 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Date" type="RichTextLabel" parent="." unique_id=1041793223]
 layout_mode = 0
-offset_left = 132.0
+offset_left = 142.0
 offset_top = 62.0
-offset_right = 215.0
+offset_right = 225.0
 offset_bottom = 85.0
 text = "11/11/1111"
 horizontal_alignment = 1
