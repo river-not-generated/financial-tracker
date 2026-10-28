@@ -18,7 +18,7 @@ public partial class MainMenu : Control
 		if (Input.IsActionJustPressed("q"))
 		{
 			GD.Print("q!!!");
-			Data.Instance.AddTransaction(new Transaction(Time.GetDatetimeStringFromSystem(false), 12.02, "Transaction description."));
+			Data.Instance.AddTransaction(new Transaction(12.02, "Transaction description."));
 			Data.Instance.Print();
 			Data.Instance.RemoveTransaction(0);
 			Data.Instance.Print();

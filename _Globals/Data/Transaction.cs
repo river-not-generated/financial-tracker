@@ -1,11 +1,13 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public partial class Transaction : Resource
 {
 	public Transaction(double money, string description)
 	{
-		this.date = Time.GetDatetimeStringFromSystem(false);
+		Dictionary time = Time.GetDateDictFromSystem();
+		this.date = $"{time["month"]}/{time["day"]}/{time["year"]}";
 		this.money = money;
 		this.description = description;
 	}
