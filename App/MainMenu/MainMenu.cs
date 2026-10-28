@@ -20,8 +20,11 @@ public partial class MainMenu : Control
 			GD.Print("q!!!");
 			Data.Instance.AddTransaction(new Transaction(12.02, "Transaction description."));
 			Data.Instance.Print();
-			Data.Instance.RemoveTransaction(0);
-			Data.Instance.Print();
+			Data.Instance.Save("username", "password");
+		}
+		else if (Input.IsActionJustReleased("e"))
+		{
+			Data.Instance.Load("username", "password");
 		}
 	}
 

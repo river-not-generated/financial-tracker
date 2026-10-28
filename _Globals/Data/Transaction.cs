@@ -22,6 +22,23 @@ public partial class Transaction : Resource
 	public double money;
 	public string description;
 
+	public Dictionary ToDict()
+	{
+		return new Dictionary()
+		{ 
+			{ "date",		 date },
+			{ "money",		 money },
+			{ "description", description }
+		};
+	}
+	public static Transaction FromDict(Dictionary dict)
+	{
+		return new Transaction(
+			(string)dict["date"], 
+			(double)dict["money"], 
+			(string)dict["description"]
+		);
+	}
 	public override string ToString()
 	{
 		return $"${money} on {date}  -  {description}";
