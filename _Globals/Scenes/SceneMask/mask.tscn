@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d04gaygk4e7q3"]
+
+[ext_resource type="Script" uid="uid://ds4w68lg3prih" path="res://_Globals/Scenes/SceneMask/mask.gd" id="1_p1nwp"]
+
+[node name="Mask" type="Control" unique_id=1935304085]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_p1nwp")

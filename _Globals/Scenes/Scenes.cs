@@ -5,8 +5,14 @@ using System;
 public partial class Scenes : Node
 {
 	public static Scenes Instance { get; private set; }
+	private Control mask;
+	public override void _Ready() 
+	{ 
+		Instance = this;
+		mask = GetNode<Control>("MaskViewport/Mask");
+	}
 
-	public override void _Ready() { Instance = this; }
+
 
 	// To get a scene's UID, right-click on the .tscn file and press "Copy UID".
 	public Dictionary SceneDict = new Dictionary
@@ -20,9 +26,23 @@ public partial class Scenes : Node
 		//{ "Scene Name",      GD.Load("SCENE_UID") },
 		//{ "Scene Name",      GD.Load("SCENE_UID") },
 	};
-	
-	public void Swap(string name)
+
+	private bool swapping = false;
+	public async void Swap(string name)
 	{
-		GetTree().ChangeSceneToPacked((PackedScene)SceneDict[name]);
+		if (swapping) return;
+		swapping = true;
+
+		PackedScene nextScene = ((PackedScene)(GodotObject)SceneDict[name]);
+
+		mask.Call("fade", false);
+		await ToSignal(mask, "done");
+
+		GetTree().ChangeSceneToPacked(nextScene);
+
+		mask.Call("fade", true);
+		await ToSignal(mask, "done");
+
+		swapping = false;
 	}
 }

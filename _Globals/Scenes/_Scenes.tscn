@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bgmevi6eyumta"]
+
+[ext_resource type="Script" uid="uid://b66o1keo7luuo" path="res://_Globals/Scenes/Scenes.cs" id="1_5rahw"]
+[ext_resource type="PackedScene" uid="uid://d04gaygk4e7q3" path="res://_Globals/Scenes/SceneMask/mask.tscn" id="1_s8ygl"]
+[ext_resource type="Shader" uid="uid://c7pir5vqmd042" path="res://_Assets/Shaders/mask.gdshader" id="3_5loa2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1cdxd"]
+viewport_path = NodePath("MaskViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5rahw"]
+resource_local_to_scene = true
+shader = ExtResource("3_5loa2")
+shader_parameter/mask = SubResource("ViewportTexture_1cdxd")
+
+[node name="Scenes" type="Node" unique_id=1180811441]
+script = ExtResource("1_5rahw")
+
+[node name="MaskViewport" type="SubViewport" parent="." unique_id=666549682]
+size = Vector2i(1152, 648)
+
+[node name="ColorRect" type="ColorRect" parent="MaskViewport" unique_id=93370380]
+z_index = -100
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Mask" parent="MaskViewport" unique_id=1935304085 instance=ExtResource("1_s8ygl")]
+
+[node name="Darkness" type="ColorRect" parent="." unique_id=625862904]
+z_index = 100
+material = SubResource("ShaderMaterial_5rahw")
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

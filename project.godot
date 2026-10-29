@@ -20,8 +20,8 @@ config/icon="res://_Assets/Textures/icon.svg"
 
 [autoload]
 
-Scenes="*uid://b66o1keo7luuo"
 Data="*uid://163c66jxpviq"
+Scenes="*uid://bgmevi6eyumta"
 
 [display]
 

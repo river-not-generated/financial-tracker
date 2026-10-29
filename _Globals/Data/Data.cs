@@ -16,7 +16,10 @@ public partial class Data : Node
 		{"username",		  ""},
 		{"password",		  ""},
 		{"money",			  0.0},
-		{"financial history", new Array()}
+		{"earnings",		  0.0},
+		{"spending",		  0.0},
+		{"financial history", new Array()},
+		{"goals",			  new Array()}
 	};
 	public void Print()
 	{
@@ -26,19 +29,27 @@ public partial class Data : Node
 
 	#region Money
 	public double GetMoney()
-	{
-		return (double)userData["money"];
-	}
+	{ return (double)userData["money"]; }
 
 	public void SetMoney(double money)
-	{
-		userData["money"] = money;
-	}
-	#endregion money
+	{ userData["money"] = money; }
+
+	public double GetEarnings()
+	{ return (double)userData["earnings"]; }
+
+    public void SetEarnings(double money)
+    { userData["earnings"] = money; }
+
+	public double GetSpending()
+	{ return (double)userData["spending"]; }
+
+    public void SetSpending(double money)
+    { userData["spending"] = money; }
+    #endregion money
 
 
-	#region Transactions
-	public Transaction GetTransaction(int index)
+    #region Transactions
+    public Transaction GetTransaction(int index)
 	{
 		// Grabs the "financial history" from userData.
 		// Casts "financial history" into a Godot.Collections.Array.
@@ -72,8 +83,15 @@ public partial class Data : Node
 
 
 	#region Saving & Loading
-	public void Save(string username, string password)
+	private string currentUsername = "";
+	private string currentPassword = "";
+	public bool Save(string username, string password)
 	{
+		if (username == null || string.IsNullOrEmpty(username))
+			return false;
+		if (password == null || string.IsNullOrEmpty(password))
+			return false;
+
 		// Duplicates the dictionary.
 		// Grabs the current "financial history" and puts into a temporary array.
 		// Creates the new "financial history" array.
@@ -91,13 +109,25 @@ public partial class Data : Node
 		// Opens the file.
 		// Stores the stringified version of the dictionary.
 		// Closes the file.
+		// Returns true.
 		FileAccess file = FileAccess.OpenEncryptedWithPass($"user://{username}", FileAccess.ModeFlags.Write, password);
 		file.StoreLine(Json.Stringify(dict));
 		file.Close();
+
+		currentUsername = username;
+		currentPassword = password;
+
+		return true;
 	}
 
+	public bool Save()
+	{
+		return Save(currentUsername, currentPassword);
+	}
 	public bool Load(string username, string password)
 	{
+		if (!DoesUserExist(username)) return false;
+
 		// Loads the file.
 		// Gets the contents of the file.
 		// Parses the file contents.
@@ -134,6 +164,15 @@ public partial class Data : Node
 		file.Close();
 		GD.Print($"Succesfully loaded {username}'s data!");
 		return true;
+	}
+
+	public bool DoesUserExist(string username)
+	{
+		string[] directory = DirAccess.GetFilesAt($"user://");
+		foreach (string directoryEntry in directory)
+			if (directoryEntry == username)
+				return true;
+		return false;
 	}
 	#endregion
 }

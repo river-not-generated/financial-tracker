@@ -25,6 +25,8 @@ public partial class MainMenu : Control
 		else if (Input.IsActionJustReleased("e"))
 		{
 			Data.Instance.Load("username", "password");
+			GD.Print($"{Data.Instance.DoesUserExist("username")}");
+			GD.Print($"{Data.Instance.DoesUserExist("userAAAAAAAAAAAAAAAAA")}");
 		}
 	}
 
