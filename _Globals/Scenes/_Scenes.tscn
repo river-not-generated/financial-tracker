@@ -16,6 +16,7 @@ shader_parameter/mask = SubResource("ViewportTexture_1cdxd")
 script = ExtResource("1_5rahw")
 
 [node name="MaskViewport" type="SubViewport" parent="." unique_id=666549682]
+canvas_item_default_texture_filter = 0
 size = Vector2i(1152, 648)
 
 [node name="ColorRect" type="ColorRect" parent="MaskViewport" unique_id=93370380]

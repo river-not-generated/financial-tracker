@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cgy5kaus70n07"]
+
+[ext_resource type="Script" uid="uid://cw75k4p17viac" path="res://_Globals/Scenes/SceneMask/Transitions/transition_3.gd" id="1_jgg2f"]
+
+[node name="Transition3" type="Control" unique_id=356273759]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jgg2f")
+time = 0.67
+
+[node name="PillarsTop" type="Control" parent="." unique_id=2036167425]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Pillar0" type="ColorRect" parent="PillarsTop" unique_id=968091670]
+layout_mode = 0
+offset_right = 144.0
+offset_bottom = 648.0
+
+[node name="Pillar1" type="ColorRect" parent="PillarsTop" unique_id=2016487940]
+layout_mode = 0
+offset_left = 288.0
+offset_right = 432.0
+offset_bottom = 648.0
+
+[node name="Pillar2" type="ColorRect" parent="PillarsTop" unique_id=277787792]
+layout_mode = 0
+offset_left = 576.0
+offset_right = 720.0
+offset_bottom = 648.0
+
+[node name="Pillar3" type="ColorRect" parent="PillarsTop" unique_id=1888694789]
+layout_mode = 0
+offset_left = 864.0
+offset_right = 1008.0
+offset_bottom = 648.0
+
+[node name="PillarsBottom" type="Control" parent="." unique_id=1297288112]
+anchors_preset = 0
+offset_left = 144.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Pillar0" type="ColorRect" parent="PillarsBottom" unique_id=1910429413]
+layout_mode = 0
+offset_right = 144.0
+offset_bottom = 648.0
+
+[node name="Pillar1" type="ColorRect" parent="PillarsBottom" unique_id=901802422]
+layout_mode = 0
+offset_left = 288.0
+offset_right = 432.0
+offset_bottom = 648.0
+
+[node name="Pillar2" type="ColorRect" parent="PillarsBottom" unique_id=1997729512]
+layout_mode = 0
+offset_left = 576.0
+offset_right = 720.0
+offset_bottom = 648.0
+
+[node name="Pillar3" type="ColorRect" parent="PillarsBottom" unique_id=310964994]
+layout_mode = 0
+offset_left = 864.0
+offset_right = 1008.0
+offset_bottom = 648.0

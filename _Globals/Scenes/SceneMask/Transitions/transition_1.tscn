@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://djplfjx6s6kit"]
+
+[ext_resource type="Script" uid="uid://dobpg84aaifwi" path="res://_Globals/Scenes/SceneMask/Transitions/transition_1.gd" id="1_cpy34"]
+[ext_resource type="Texture2D" uid="uid://kpgramtsbtys" path="res://_Assets/Textures/flower_man.png" id="2_2vtlg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umta0"]
+atlas = ExtResource("2_2vtlg")
+region = Rect2(0, 0, 23, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybpbq"]
+atlas = ExtResource("2_2vtlg")
+region = Rect2(23, 0, 23, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt87k"]
+atlas = ExtResource("2_2vtlg")
+region = Rect2(46, 0, 23, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v08ni"]
+atlas = ExtResource("2_2vtlg")
+region = Rect2(69, 0, 23, 61)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6smh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umta0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybpbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt87k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v08ni")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Transition1" type="Control" unique_id=1085807101]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cpy34")
+time = 0.75
+
+[node name="Jarona" type="AnimatedSprite2D" parent="." unique_id=1524448744]
+position = Vector2(576, 324)
+sprite_frames = SubResource("SpriteFrames_c6smh")
+autoplay = "default"
+frame_progress = 0.70674247

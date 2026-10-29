@@ -31,6 +31,7 @@ public partial class Scenes : Node
 	public async void Swap(string name)
 	{
 		if (swapping) return;
+		GetViewport().GuiDisableInput = true;
 		swapping = true;
 
 		PackedScene nextScene = ((PackedScene)(GodotObject)SceneDict[name]);
@@ -43,6 +44,7 @@ public partial class Scenes : Node
 		mask.Call("fade", true);
 		await ToSignal(mask, "done");
 
-		swapping = false;
+        GetViewport().GuiDisableInput = false;
+        swapping = false;
 	}
 }

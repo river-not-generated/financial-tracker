@@ -180,6 +180,6 @@ public partial class Data : Node
 		if (what == NotificationWMCloseRequest)
 			Save();
 		base._Notification(what);
-    }
+	}
 	#endregion
 }
