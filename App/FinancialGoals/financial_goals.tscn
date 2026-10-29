@@ -8,15 +8,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -685.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xvlw6")
-
-[node name="Label" type="RichTextLabel" parent="." unique_id=1311161878]
-layout_mode = 0
-offset_right = 467.0
-offset_bottom = 648.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=938911956]
 z_index = -1
@@ -31,3 +26,53 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Back To Menu"
 script = ExtResource("2_cgnxp")
+
+[node name="GoalsContainer" type="VBoxContainer" parent="." unique_id=805087074]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 70.0
+offset_right = 1145.0
+offset_bottom = 643.0
+
+[node name="GoalsHeader" type="RichTextLabel" parent="." unique_id=1277548835]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 1.0
+offset_right = 1149.0
+offset_bottom = 46.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Financial Goals:"
+horizontal_alignment = 1
+
+[node name="GoalsHeader2" type="RichTextLabel" parent="." unique_id=1603286714]
+layout_mode = 0
+offset_top = 119.0
+offset_right = 484.0
+offset_bottom = 164.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Enter Goal Here:"
+horizontal_alignment = 1
+
+[node name="Divider" type="ColorRect" parent="." unique_id=605929598]
+layout_mode = 0
+offset_left = 484.0
+offset_right = 487.0
+offset_bottom = 648.0
+color = Color(0.00032855253, 0.0699848, 0.13432375, 1)
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=759917074]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 162.0
+offset_right = 422.0
+offset_bottom = 521.0
+wrap_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=553816520]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 531.0
+offset_right = 322.0
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 32
+text = "Add Goal"

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c856b8ngxv6g3"]
+
+[ext_resource type="Script" uid="uid://c7l1sd5lll8fm" path="res://App/FinancialGoals/GoalContainer/goal_container.gd" id="1_2o5qa"]
+
+[node name="GoalContainer" type="Panel" unique_id=230394013]
+custom_minimum_size = Vector2(523, 93)
+offset_right = 523.0
+offset_bottom = 93.0
+script = ExtResource("1_2o5qa")
+
+[node name="DescriptionContainer" type="ReferenceRect" parent="." unique_id=729409414]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 379.0
+offset_bottom = 90.0
+border_color = Color(0.00020232363, 0.016891198, 0.18358624, 1)
+
+[node name="GoalHeader" type="RichTextLabel" parent="DescriptionContainer" unique_id=672923050]
+layout_mode = 0
+offset_right = 378.0
+offset_bottom = 19.0
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[u]Goal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Goal" type="RichTextLabel" parent="DescriptionContainer" unique_id=1747239653]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 19.0
+offset_right = 377.0
+offset_bottom = 88.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+[node name="Button" type="Button" parent="." unique_id=1477771430]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 27.0
+offset_right = 519.0
+offset_bottom = 60.0
+text = "Complete Goal"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
