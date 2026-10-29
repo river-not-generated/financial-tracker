@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="financial-tracker"
-run/main_scene="uid://c2rt2lth6yjsi"
+run/main_scene="uid://cc0h5aorihwfb"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Idiots3/Wafub"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
@@ -20,8 +20,8 @@ config/icon="res://_Assets/Textures/icon.svg"
 
 [autoload]
 
-Data="*uid://163c66jxpviq"
 Scenes="*uid://bgmevi6eyumta"
+Data="*uid://163c66jxpviq"
 
 [display]
 

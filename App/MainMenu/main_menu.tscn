@@ -65,5 +65,3 @@ offset_right = 725.0
 offset_bottom = 300.0
 theme_override_font_sizes/font_size = 128
 text = "wafüb"
-
-[connection signal="pressed" from="FGoalsButton" to="." method="_OnButtonPressed"]
