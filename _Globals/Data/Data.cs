@@ -37,19 +37,19 @@ public partial class Data : Node
 	public double GetEarnings()
 	{ return (double)userData["earnings"]; }
 
-    public void SetEarnings(double money)
-    { userData["earnings"] = money; }
+	public void SetEarnings(double money)
+	{ userData["earnings"] = money; }
 
 	public double GetSpending()
 	{ return (double)userData["spending"]; }
 
-    public void SetSpending(double money)
-    { userData["spending"] = money; }
-    #endregion money
+	public void SetSpending(double money)
+	{ userData["spending"] = money; }
+	#endregion money
 
 
-    #region Transactions
-    public Transaction GetTransaction(int index)
+	#region Transactions
+	public Transaction GetTransaction(int index)
 	{
 		// Grabs the "financial history" from userData.
 		// Casts "financial history" into a Godot.Collections.Array.
@@ -174,5 +174,12 @@ public partial class Data : Node
 				return true;
 		return false;
 	}
+
+	public override void _Notification(int what)
+	{
+		if (what == NotificationWMCloseRequest)
+			Save();
+		base._Notification(what);
+    }
 	#endregion
 }
