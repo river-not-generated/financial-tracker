@@ -29,9 +29,9 @@ offset_bottom = 40.0
 [node name="TotalMoney" type="RichTextLabel" parent="TotalMoney" unique_id=214821675]
 z_index = 1
 layout_mode = 0
-offset_top = 96.0
+offset_top = 183.0
 offset_right = 1152.0
-offset_bottom = 170.0
+offset_bottom = 257.0
 theme_override_font_sizes/normal_font_size = 32
 text = "Total Money: $-1,000.00"
 horizontal_alignment = 1
@@ -40,9 +40,9 @@ vertical_alignment = 1
 [node name="MoneyBackground" type="ColorRect" parent="TotalMoney" unique_id=1663595471]
 layout_mode = 0
 offset_left = 384.0
-offset_top = 96.0
+offset_top = 183.0
 offset_right = 776.0
-offset_bottom = 171.0
+offset_bottom = 258.0
 color = Color(0.41960785, 0.5764706, 0, 1)
 
 [node name="Buttons" type="HBoxContainer" parent="." unique_id=1310663793]
@@ -83,9 +83,9 @@ offset_bottom = 40.0
 [node name="DescriptionInput" type="LineEdit" parent="ExpensesInput" unique_id=989463425]
 layout_mode = 0
 offset_left = 447.0
-offset_top = 287.0
+offset_top = 428.0
 offset_right = 681.0
-offset_bottom = 323.0
+offset_bottom = 464.0
 theme_override_font_sizes/font_size = 20
 placeholder_text = "Description"
 alignment = 1
@@ -93,9 +93,9 @@ alignment = 1
 [node name="MoneyInput" type="SpinBox" parent="ExpensesInput" unique_id=1133579278]
 layout_mode = 0
 offset_left = 433.0
-offset_top = 218.0
+offset_top = 359.0
 offset_right = 671.0
-offset_bottom = 280.0
+offset_bottom = 421.0
 theme = SubResource("Theme_bup6r")
 max_value = 1000000.0
 step = 0.01
@@ -110,39 +110,20 @@ offset_bottom = 68.0
 theme_override_font_sizes/normal_font_size = 64
 text = "$"
 
-[node name="TransctionsLabel" type="RichTextLabel" parent="." unique_id=89094990]
-layout_mode = 0
-offset_left = 257.0
-offset_top = 328.0
-offset_right = 876.0
-offset_bottom = 401.0
-theme_override_font_sizes/normal_font_size = 32
-bbcode_enabled = true
-text = "[u]Recent Transactions"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TransactionsContainer" type="VBoxContainer" parent="." unique_id=942806704]
-layout_mode = 0
-offset_left = 316.0
-offset_top = 385.0
-offset_right = 837.0
-offset_bottom = 630.0
-
 [node name="DepositButton" type="Button" parent="." unique_id=732463541]
 layout_mode = 0
 offset_left = 675.0
-offset_top = 221.0
+offset_top = 362.0
 offset_right = 782.0
-offset_bottom = 248.0
+offset_bottom = 389.0
 text = "Deposit"
 
 [node name="WithdrawButton" type="Button" parent="." unique_id=600143687]
 layout_mode = 0
 offset_left = 675.0
-offset_top = 252.0
+offset_top = 393.0
 offset_right = 782.0
-offset_bottom = 279.0
+offset_bottom = 420.0
 text = "Withdraw"
 
 [connection signal="pressed" from="DepositButton" to="." method="_OnDepositPressed"]
