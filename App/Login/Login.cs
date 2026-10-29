@@ -22,13 +22,19 @@ public partial class Login : Control
 
 		if (!string.IsNullOrEmpty(usernameInput.Text) && !string.IsNullOrEmpty(passwordInput.Text))
 		{
-			if (usernameInput.Text == "ben") //check if the username exists
+			if (Data.Instance.DoesUserExist(usernameInput.Text)) //check if the username exists
 			{
-				if (passwordInput.Text == "sux") //check if the password matches the username
+				if (Data.Instance.Load(usernameInput.Text, passwordInput.Text)) //check if the password matches the username
 				{
 					//login!!!!
 					Scenes.Instance.Swap("Main Menu");
 					GD.Print("YAYYYYYYYYY");
+				}
+				else
+				{
+					GD.Print("you mean nothing to everyone");
+					usernameInput.Text = string.Empty;
+					passwordInput.Text = string.Empty;
 				}
 			}
 			else

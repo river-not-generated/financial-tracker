@@ -67,6 +67,3 @@ theme_override_font_sizes/font_size = 128
 text = "wafüb"
 
 [connection signal="pressed" from="FGoalsButton" to="." method="_OnButtonPressed"]
-[connection signal="pressed" from="TransactionHistory" to="." method="_OnButtonPressed"]
-[connection signal="pressed" from="LoginButton" to="." method="_OnButtonPressed"]
-[connection signal="pressed" from="ETrackerButton" to="." method="_OnButtonPressed"]
