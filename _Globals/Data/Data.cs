@@ -1,5 +1,7 @@
 using Godot;
 using Godot.Collections;
+using System.Transactions;
+using GDArray = Godot.Collections.Array;
 
 public partial class Data : Node
 {
@@ -18,8 +20,8 @@ public partial class Data : Node
 		{"money",			  0.0},
 		{"earnings",		  0.0},
 		{"spending",		  0.0},
-		{"financial history", new Array()},
-		{"goals",			  new Array()}
+		{"financial history", new GDArray()},
+		{"goals",			  new GDArray()}
 	};
 	public void Print()
 	{
@@ -55,7 +57,7 @@ public partial class Data : Node
 		// Casts "financial history" into a Godot.Collections.Array.
 		// Retrieves the item at the requested index.
 		// Casts the item into a Transaction.
-		return (Transaction)((Array)userData["financial history"])[index];
+		return (Transaction)((GDArray)userData["financial history"])[index];
 	}
 
 	public void AddTransaction(Transaction transaction)
@@ -63,27 +65,51 @@ public partial class Data : Node
 		// Grabs the "financial history" from userData.
 		// Casts "financial history" into a Godot.Collections.Array.
 		// Calls "Add()" on the "financial history" array.
-		((Array)userData["financial history"]).Add(transaction);
+		((GDArray)userData["financial history"]).Add(transaction);
 	}
 
 	public void RemoveTransaction(int index)
 	{
 		// View AddTransaction comments
-		((Array)userData["financial history"]).RemoveAt(index);
+		((GDArray)userData["financial history"]).RemoveAt(index);
 	}
 
 	public int GetTotalTransactions()
 	{
 		// View AddTransaction comments
-		return ((Array)userData["financial history"]).Count;
+		return ((GDArray)userData["financial history"]).Count;
 
 	}
-	#endregion transactions
-	#endregion data
+    #endregion transactions
+
+    #region Goals
+	public Goal GetGoal(int index)
+	{
+		return (Goal)((GDArray)userData["goals"])[index];
+    }
+
+	public void AddGoal(Goal goal)
+	{
+        ((GDArray)userData["goals"]).Add(goal);
+    }
+
+    public void RemoveGoal(int index)
+    {
+        // View AddTransaction comments
+        ((GDArray)userData["goals"]).RemoveAt(index);
+    }
+
+    public int GetTotalGoals()
+	{
+        return ((GDArray)userData["goals"]).Count;
+    }
+    #endregion goals
+
+    #endregion data
 
 
-	#region Saving & Loading
-	private string currentUsername = "";
+    #region Saving & Loading
+    private string currentUsername = "";
 	private string currentPassword = "";
 	public bool Save(string username, string password)
 	{
@@ -96,8 +122,8 @@ public partial class Data : Node
 		// Grabs the current "financial history" and puts into a temporary array.
 		// Creates the new "financial history" array.
 		Dictionary dict = userData.Duplicate();
-		Array temp = (Array)userData["financial history"];
-		Array financialHistory = [];
+        GDArray temp = (GDArray)userData["financial history"];
+        GDArray financialHistory = [];
 
 		// Iterates through temp.
 			// Converts the transactions into dictionaries.
@@ -148,8 +174,8 @@ public partial class Data : Node
 		// Grabs the current "financial history" and puts into a temporary array.
 		// Creates the new "financial history" array.
 		userData = (Dictionary)parse;
-		Array temp = (Array)userData["financial history"];
-		Array financialHistory = [];
+        GDArray temp = (GDArray)userData["financial history"];
+        GDArray financialHistory = [];
 
 		// Iterates through temp.
 			// Converts the dictionaries into transactions and adds them to the array.
