@@ -82,10 +82,7 @@ public partial class Data : Node
 	}
 	#endregion transactions
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 	#region Goals
 	public Goal GetGoal(int index)
 	{
