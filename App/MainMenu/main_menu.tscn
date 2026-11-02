@@ -39,10 +39,10 @@ SceneGoTo = "Transaction History"
 
 [node name="LoginButton" type="Button" parent="." unique_id=1422277159]
 layout_mode = 0
-offset_left = 482.0
-offset_top = 509.0
-offset_right = 663.0
-offset_bottom = 554.0
+offset_left = 484.0
+offset_top = 464.0
+offset_right = 665.0
+offset_bottom = 509.0
 text = "Back To Login"
 script = ExtResource("2_gxhgq")
 SceneGoTo = "Login"
@@ -65,3 +65,13 @@ offset_right = 725.0
 offset_bottom = 300.0
 theme_override_font_sizes/font_size = 128
 text = "wafüb"
+
+[node name="QuitButton" type="Button" parent="." unique_id=520388738]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 551.0
+offset_right = 650.0
+offset_bottom = 589.0
+text = "Quit"
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

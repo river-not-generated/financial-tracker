@@ -22,6 +22,7 @@ offset_bottom = 648.0
 color = Color(0.1608041, 0.19435754, 0.30922577, 1)
 
 [node name="MainMenuButton" type="Button" parent="." unique_id=737902244]
+visible = false
 layout_mode = 0
 offset_right = 94.0
 offset_bottom = 27.0
@@ -30,9 +31,9 @@ script = ExtResource("2_rklxj")
 
 [node name="UsernameInput" type="LineEdit" parent="." unique_id=1389123403]
 layout_mode = 0
-offset_left = 501.0
+offset_left = 704.0
 offset_top = 240.0
-offset_right = 654.0
+offset_right = 857.0
 offset_bottom = 280.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1dy3r")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_1dy3r")
@@ -49,9 +50,9 @@ color = Color(0.27724954, 0.6118905, 0.50442606, 1)
 
 [node name="PasswordInput" type="LineEdit" parent="." unique_id=1764333797]
 layout_mode = 0
-offset_left = 501.0
+offset_left = 704.0
 offset_top = 308.0
-offset_right = 654.0
+offset_right = 857.0
 offset_bottom = 348.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rklxj")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_rklxj")
@@ -68,10 +69,66 @@ color = Color(0.27724954, 0.6118905, 0.50442606, 1)
 
 [node name="Button" type="Button" parent="." unique_id=1658349154]
 layout_mode = 0
-offset_left = 501.0
+offset_left = 704.0
 offset_top = 375.0
-offset_right = 654.0
+offset_right = 857.0
 offset_bottom = 413.0
-text = "Log in"
+text = "Login"
+
+[node name="UsernameCreate" type="LineEdit" parent="." unique_id=456262589]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 240.0
+offset_right = 446.0
+offset_bottom = 280.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1dy3r")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_1dy3r")
+placeholder_text = "Username"
+alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="UsernameCreate" unique_id=514745962]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 153.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(0.27724954, 0.6118905, 0.50442606, 1)
+
+[node name="PasswordCreate" type="LineEdit" parent="." unique_id=1461166514]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 308.0
+offset_right = 446.0
+offset_bottom = 348.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rklxj")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_rklxj")
+placeholder_text = "Password"
+alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="PasswordCreate" unique_id=1137112887]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 153.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(0.27724954, 0.6118905, 0.50442606, 1)
+
+[node name="Button2" type="Button" parent="." unique_id=1140126433]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 375.0
+offset_right = 446.0
+offset_bottom = 413.0
+text = "Create"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1261394872]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 492.0
+offset_right = 658.0
+offset_bottom = 530.0
+text = "Quit"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_create_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

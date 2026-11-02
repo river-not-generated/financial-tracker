@@ -34,4 +34,9 @@ public partial class MainMenu : Control
 	{
 		Scenes.Instance.Swap("Financial Goals");
 	}
+
+	public void _on_quit_button_pressed()
+	{
+		GetTree().Quit();
+	}
 }
