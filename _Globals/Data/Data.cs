@@ -82,6 +82,10 @@ public partial class Data : Node
 	}
 	#endregion transactions
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 	#region Goals
 	public Goal GetGoal(int index)
 	{
@@ -152,12 +156,21 @@ public partial class Data : Node
 	}
 	public bool Load(string username, string password)
 	{
-		if (!DoesUserExist(username)) return false;
+		if (!DoesUserExist(username))
+		{
+            GD.PushWarning($"{username} does not exist!");
+            return false;
+		}
 
 		// Loads the file.
 		// Gets the contents of the file.
 		// Parses the file contents.
 		FileAccess file = FileAccess.OpenEncryptedWithPass($"user://{username}", FileAccess.ModeFlags.Read, password);
+		if (file == null)
+		{
+            GD.PushWarning($"{username} exists, but the password was incorrect!");
+            return false;
+		}
 		string fileContents = file.GetLine();
 		Variant parse = Json.ParseString(fileContents);
 
@@ -166,7 +179,7 @@ public partial class Data : Node
 			// then return false.
 		if (parse.VariantType == Variant.Type.Nil)
 		{
-			GD.PushWarning($"{username} is not saved or the password was incorrect!");
+			GD.PushWarning($"dude idek what happened");
 			return false;
 		}
 

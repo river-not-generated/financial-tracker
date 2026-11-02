@@ -3,6 +3,9 @@ extends Control
 const TRANSITIONS: Array[PackedScene] = [
 	preload("uid://rxy5203aucd5"),
 	preload("uid://cgy5kaus70n07"),
+	preload("uid://cnk3ahojw6hs3"),
+	#preload(""),
+	#preload(""),
 ]
 var UNSERIOUS_TRANSITIONS: Array[PackedScene] = [
 	preload("uid://djplfjx6s6kit"),
