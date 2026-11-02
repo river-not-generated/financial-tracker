@@ -80,36 +80,36 @@ public partial class Data : Node
 		return ((GDArray)userData["financial history"]).Count;
 
 	}
-    #endregion transactions
+	#endregion transactions
 
-    #region Goals
+	#region Goals
 	public Goal GetGoal(int index)
 	{
 		return (Goal)((GDArray)userData["goals"])[index];
-    }
+	}
 
 	public void AddGoal(Goal goal)
 	{
-        ((GDArray)userData["goals"]).Add(goal);
-    }
+		((GDArray)userData["goals"]).Add(goal);
+	}
 
-    public void RemoveGoal(int index)
-    {
-        // View AddTransaction comments
-        ((GDArray)userData["goals"]).RemoveAt(index);
-    }
-
-    public int GetTotalGoals()
+	public void RemoveGoal(int index)
 	{
-        return ((GDArray)userData["goals"]).Count;
-    }
-    #endregion goals
+		// View AddTransaction comments
+		((GDArray)userData["goals"]).RemoveAt(index);
+	}
 
-    #endregion data
+	public int GetTotalGoals()
+	{
+		return ((GDArray)userData["goals"]).Count;
+	}
+	#endregion goals
+
+	#endregion data
 
 
-    #region Saving & Loading
-    private string currentUsername = "";
+	#region Saving & Loading
+	private string currentUsername = "";
 	private string currentPassword = "";
 	public bool Save(string username, string password)
 	{
@@ -122,8 +122,8 @@ public partial class Data : Node
 		// Grabs the current "financial history" and puts into a temporary array.
 		// Creates the new "financial history" array.
 		Dictionary dict = userData.Duplicate();
-        GDArray temp = (GDArray)userData["financial history"];
-        GDArray financialHistory = [];
+		GDArray temp = (GDArray)userData["financial history"];
+		GDArray financialHistory = [];
 
 		// Iterates through temp.
 			// Converts the transactions into dictionaries.
@@ -174,8 +174,8 @@ public partial class Data : Node
 		// Grabs the current "financial history" and puts into a temporary array.
 		// Creates the new "financial history" array.
 		userData = (Dictionary)parse;
-        GDArray temp = (GDArray)userData["financial history"];
-        GDArray financialHistory = [];
+		GDArray temp = (GDArray)userData["financial history"];
+		GDArray financialHistory = [];
 
 		// Iterates through temp.
 			// Converts the dictionaries into transactions and adds them to the array.
