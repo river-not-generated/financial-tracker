@@ -44,7 +44,7 @@ public partial class Scenes : Node
 		mask.Call("fade", true);
 		await ToSignal(mask, "done");
 
-        GetViewport().GuiDisableInput = false;
-        swapping = false;
+		GetViewport().GuiDisableInput = false;
+		swapping = false;
 	}
 }

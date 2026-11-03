@@ -20,26 +20,19 @@ offset_right = 1151.0
 offset_bottom = 648.0
 color = Color(0.1608041, 0.19435754, 0.30922577, 1)
 
-[node name="MainMenuButton" type="Button" parent="." unique_id=1657967588]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Back To Menu"
-script = ExtResource("2_cgnxp")
-
 [node name="GoalsContainer" type="VBoxContainer" parent="." unique_id=805087074]
 layout_mode = 0
 offset_left = 492.0
-offset_top = 70.0
+offset_top = 163.0
 offset_right = 1145.0
 offset_bottom = 643.0
 
 [node name="GoalsHeader" type="RichTextLabel" parent="." unique_id=1277548835]
 layout_mode = 0
 offset_left = 487.0
-offset_top = 1.0
+offset_top = 88.0
 offset_right = 1149.0
-offset_bottom = 46.0
+offset_bottom = 133.0
 theme_override_font_sizes/normal_font_size = 32
 text = "Financial Goals:"
 horizontal_alignment = 1
@@ -56,6 +49,7 @@ horizontal_alignment = 1
 [node name="Divider" type="ColorRect" parent="." unique_id=605929598]
 layout_mode = 0
 offset_left = 484.0
+offset_top = 87.0
 offset_right = 487.0
 offset_bottom = 648.0
 color = Color(0.00032855253, 0.0699848, 0.13432375, 1)
@@ -76,5 +70,35 @@ offset_right = 322.0
 offset_bottom = 616.0
 theme_override_font_sizes/font_size = 32
 text = "Add Goal"
+
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=2011511489]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 1152.0
+offset_bottom = 78.0
+theme_override_constants/separation = 67
+alignment = 1
+
+[node name="MainMenu" type="Button" parent="Buttons" unique_id=1624018766]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"
+script = ExtResource("2_cgnxp")
+
+[node name="ExpensesTracker" type="Button" parent="Buttons" unique_id=1261752852]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Expenses Tracker
+"
+script = ExtResource("2_cgnxp")
+SceneGoTo = "Expenses Tracker"
+
+[node name="TransactionHistory" type="Button" parent="Buttons" unique_id=1938530536]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Transaction History
+"
+script = ExtResource("2_cgnxp")
+SceneGoTo = "Transaction History"
 
 [connection signal="pressed" from="Button" to="." method="_OnAddGoalPressed"]

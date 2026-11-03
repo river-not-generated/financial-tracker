@@ -8,9 +8,9 @@ public partial class FinancialGoals : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-        descBox = GetNode<TextEdit>("DescBox");
-        goalButton = GetNode<Button>("Button");
-    }
+		descBox = GetNode<TextEdit>("DescBox");
+		goalButton = GetNode<Button>("Button");
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
