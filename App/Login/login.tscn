@@ -29,7 +29,7 @@ offset_bottom = 27.0
 text = "Back To Menu"
 script = ExtResource("2_rklxj")
 
-[node name="UsernameInput" type="LineEdit" parent="." unique_id=1389123403]
+[node name="UsernameLogin" type="LineEdit" parent="." unique_id=1389123403]
 layout_mode = 0
 offset_left = 704.0
 offset_top = 240.0
@@ -40,7 +40,7 @@ theme_override_styles/read_only = SubResource("StyleBoxEmpty_1dy3r")
 placeholder_text = "Username"
 alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="UsernameInput" unique_id=470312058]
+[node name="ColorRect2" type="ColorRect" parent="UsernameLogin" unique_id=470312058]
 show_behind_parent = true
 layout_mode = 0
 offset_right = 153.0
@@ -48,7 +48,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 color = Color(0.27724954, 0.6118905, 0.50442606, 1)
 
-[node name="PasswordInput" type="LineEdit" parent="." unique_id=1764333797]
+[node name="PasswordLogin" type="LineEdit" parent="." unique_id=1764333797]
 layout_mode = 0
 offset_left = 704.0
 offset_top = 308.0
@@ -59,7 +59,7 @@ theme_override_styles/read_only = SubResource("StyleBoxEmpty_rklxj")
 placeholder_text = "Password"
 alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="PasswordInput" unique_id=1264185283]
+[node name="ColorRect2" type="ColorRect" parent="PasswordLogin" unique_id=1264185283]
 show_behind_parent = true
 layout_mode = 0
 offset_right = 153.0
@@ -67,7 +67,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 color = Color(0.27724954, 0.6118905, 0.50442606, 1)
 
-[node name="Button" type="Button" parent="." unique_id=1658349154]
+[node name="ButtonLogin" type="Button" parent="." unique_id=1658349154]
 layout_mode = 0
 offset_left = 704.0
 offset_top = 375.0
@@ -113,7 +113,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 color = Color(0.27724954, 0.6118905, 0.50442606, 1)
 
-[node name="Button2" type="Button" parent="." unique_id=1140126433]
+[node name="ButtonCreate" type="Button" parent="." unique_id=1140126433]
 layout_mode = 0
 offset_left = 293.0
 offset_top = 375.0
@@ -129,6 +129,6 @@ offset_right = 658.0
 offset_bottom = 530.0
 text = "Quit"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_create_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ButtonLogin" to="." method="_OnButtonLoginPressed"]
+[connection signal="pressed" from="ButtonCreate" to="." method="_OnButtonCreatePressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_OnQuitButtonPressed"]

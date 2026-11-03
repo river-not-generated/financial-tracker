@@ -15,10 +15,10 @@ public partial class Login : Control
 		//this is called each frame btw, this is for all the called each frame heads out there
 	}
 
-	public void _on_button_pressed()
+	public void _OnButtonLoginPressed()
 	{
-		var usernameInput = GetNode<LineEdit>("UsernameInput");
-		var passwordInput = GetNode<LineEdit>("PasswordInput");
+		var usernameInput = GetNode<LineEdit>("UsernameLogin");
+		var passwordInput = GetNode<LineEdit>("PasswordLogin");
 
 		if (!string.IsNullOrEmpty(usernameInput.Text) && !string.IsNullOrEmpty(passwordInput.Text))
 		{
@@ -47,32 +47,32 @@ public partial class Login : Control
 		}
 		else
 		{
-			GD.Print("you fucking suck, die"); //this is just a joke, probably replace this by adding a richtext lable saying invalid username or  stuff
+			GD.Print("you freakinge suck, die"); //this is just a joke, probably replace this by adding a richtext lable saying invalid username or  stuff
 		}
-	} //_on_button_create_pressed
+	}
 
-	public void _on_button_create_pressed()
+	public void _OnButtonCreatePressed()
 	{
-		var usernameCreate = GetNode<LineEdit>("UsernameCreate");
-		var passwordCreate = GetNode<LineEdit>("PasswordCreate");
+		var usernameInput = GetNode<LineEdit>("UsernameCreate");
+		var passwordInput = GetNode<LineEdit>("PasswordCreate");
 
-		if (Data.Instance.DoesUserExist(usernameCreate.Text))
+		if (Data.Instance.DoesUserExist(usernameInput.Text))
 		{
 			return;
 		}
 
-		if (!Data.Instance.Save(usernameCreate.Text, passwordCreate.Text))
+		if (!Data.Instance.Save(usernameInput.Text, passwordInput.Text))
 		{
 			GD.Print("User Creation Failed");
 		}
 		else
 		{
-			usernameCreate.Text = string.Empty;
-			passwordCreate.Text = string.Empty;
+            usernameInput.Text = string.Empty;
+            passwordInput.Text = string.Empty;
 		}
 	}
 
-	public void _on_quit_button_pressed()
+	public void _OnQuitButtonPressed()
 	{
 		GetTree().Quit();
 	}

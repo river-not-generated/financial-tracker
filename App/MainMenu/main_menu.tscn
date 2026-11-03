@@ -108,9 +108,9 @@ text = "wafüb"
 
 [node name="QuitButton" type="Button" parent="." unique_id=520388738]
 layout_mode = 0
-offset_left = 497.0
+offset_left = 528.0
 offset_top = 551.0
-offset_right = 650.0
+offset_right = 624.0
 offset_bottom = 589.0
 text = "Quit"
 
@@ -134,7 +134,7 @@ transform = Transform3D(1, 0, 0, 0, 2.0311499, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_qb4hd")
 script = ExtResource("4_qb4hd")
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1855101385]
+[node name="Camera" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1855101385]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 1.8063267, 0)
 projection = 1
 size = 2.307
