@@ -71,8 +71,8 @@ public partial class Data : Node
 	{
 		// View AddTransaction comments
 		((GDArray)userData["financial history"]).RemoveAt(index);
-        Save();
-    }
+		Save();
+	}
 
 	public int GetTotalTransactions()
 	{
@@ -92,15 +92,15 @@ public partial class Data : Node
 	public void AddGoal(Goal goal)
 	{
 		((GDArray)userData["goals"]).Add(goal);
-        Save();
-    }
+		Save();
+	}
 
 	public void RemoveGoal(int index)
 	{
 		// View AddTransaction comments
 		((GDArray)userData["goals"]).RemoveAt(index);
-        Save();
-    }
+		Save();
+	}
 
 	public int GetTotalGoals()
 	{
@@ -123,8 +123,8 @@ public partial class Data : Node
 		}
 		if (password == null || string.IsNullOrEmpty(password))
 		{
-            GD.Print("Password is null or empty!");
-            return false;
+			GD.Print("Password is null or empty!");
+			return false;
 		}
 
 		// Duplicates the dictionary.
@@ -142,16 +142,16 @@ public partial class Data : Node
 		dict["financial history"] = financialHistory;
 
 		GDArray goals = [];
-        temp = (GDArray)userData["goals"];
-        foreach (Transaction item in temp)
-            financialHistory.Add((item).ToDict());
-        dict["goals"] = goals;
+		temp = (GDArray)userData["goals"];
+		foreach (Goal item in temp)
+			goals.Add((item).ToDict());
+		dict["goals"] = goals;
 
-        // Opens the file.
-        // Stores the stringified version of the dictionary.
-        // Closes the file.
-        // Returns true.
-        FileAccess file = FileAccess.OpenEncryptedWithPass($"user://{username}", FileAccess.ModeFlags.Write, password);
+		// Opens the file.
+		// Stores the stringified version of the dictionary.
+		// Closes the file.
+		// Returns true.
+		FileAccess file = FileAccess.OpenEncryptedWithPass($"user://{username}", FileAccess.ModeFlags.Write, password);
 		file.StoreLine(Json.Stringify(dict));
 		file.Close();
 
@@ -171,8 +171,8 @@ public partial class Data : Node
 	{
 		if (!DoesUserExist(username))
 		{
-            GD.PushWarning($"{username} does not exist!");
-            return false;
+			GD.PushWarning($"{username} does not exist!");
+			return false;
 		}
 
 		// Loads the file.
@@ -181,8 +181,8 @@ public partial class Data : Node
 		FileAccess file = FileAccess.OpenEncryptedWithPass($"user://{username}", FileAccess.ModeFlags.Read, password);
 		if (file == null)
 		{
-            GD.PushWarning($"{username} exists, but the password was incorrect!");
-            return false;
+			GD.PushWarning($"{username} exists, but the password was incorrect!");
+			return false;
 		}
 		string fileContents = file.GetLine();
 		Variant parse = Json.ParseString(fileContents);
@@ -211,21 +211,21 @@ public partial class Data : Node
 		userData["financial history"] = financialHistory;
 
 		// Same as above, but for goals
-        temp = (GDArray)userData["goals"];
-        GDArray goals = [];
-        foreach (Dictionary item in temp)
-            financialHistory.Add(Transaction.FromDict(item));
-        userData["goals"] = financialHistory;
+		temp = (GDArray)userData["goals"];
+		GDArray goals = [];
+		foreach (Dictionary item in temp)
+			goals.Add(Goal.FromDict(item));
+		userData["goals"] = goals;
 
-        // Current username is set to loaded username
-        // Current password is set to loaded password
-        currentUsername = username;
-        currentPassword = password;
+		// Current username is set to loaded username
+		// Current password is set to loaded password
+		currentUsername = username;
+		currentPassword = password;
 
-        // Close the file.
-        // ...
-        // Return true.
-        file.Close();
+		// Close the file.
+		// ...
+		// Return true.
+		file.Close();
 		GD.Print($"Succesfully loaded {username}'s data!");
 		return true;
 	}
