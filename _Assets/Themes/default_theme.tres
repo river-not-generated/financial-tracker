@@ -53,9 +53,13 @@ corner_detail = 5
 
 [resource]
 Button/colors/font_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
+Button/colors/font_outline_color = Color(0, 0.02745098, 0.14117648, 1)
+Button/constants/outline_size = 8
 Button/styles/hover = SubResource("StyleBoxFlat_3v7uh")
 Button/styles/normal = SubResource("StyleBoxFlat_gthwp")
 Button/styles/pressed = SubResource("StyleBoxFlat_3hsoj")
 Label/colors/font_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
+Label/colors/font_outline_color = Color(0, 0.02745098, 0.14117648, 1)
+Label/constants/outline_size = 8
 LineEdit/colors/font_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
 TextEdit/colors/font_color = Color(0.80784315, 0.8862745, 0.92156863, 1)

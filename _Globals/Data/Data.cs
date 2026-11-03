@@ -15,8 +15,6 @@ public partial class Data : Node
 	public static Data Instance { get; private set; }
 	private Dictionary userData = new Dictionary
 	{
-		{"username",		  ""},
-		{"password",		  ""},
 		{"money",			  0.0},
 		{"earnings",		  0.0},
 		{"spending",		  0.0},
@@ -66,13 +64,15 @@ public partial class Data : Node
 		// Casts "financial history" into a Godot.Collections.Array.
 		// Calls "Add()" on the "financial history" array.
 		((GDArray)userData["financial history"]).Add(transaction);
+		Save();
 	}
 
 	public void RemoveTransaction(int index)
 	{
 		// View AddTransaction comments
 		((GDArray)userData["financial history"]).RemoveAt(index);
-	}
+        Save();
+    }
 
 	public int GetTotalTransactions()
 	{
@@ -92,13 +92,15 @@ public partial class Data : Node
 	public void AddGoal(Goal goal)
 	{
 		((GDArray)userData["goals"]).Add(goal);
-	}
+        Save();
+    }
 
 	public void RemoveGoal(int index)
 	{
 		// View AddTransaction comments
 		((GDArray)userData["goals"]).RemoveAt(index);
-	}
+        Save();
+    }
 
 	public int GetTotalGoals()
 	{
@@ -115,9 +117,15 @@ public partial class Data : Node
 	public bool Save(string username, string password)
 	{
 		if (username == null || string.IsNullOrEmpty(username))
+		{
+			GD.Print("Username is null or empty!");
 			return false;
+		}
 		if (password == null || string.IsNullOrEmpty(password))
-			return false;
+		{
+            GD.Print("Password is null or empty!");
+            return false;
+		}
 
 		// Duplicates the dictionary.
 		// Grabs the current "financial history" and puts into a temporary array.
@@ -143,6 +151,8 @@ public partial class Data : Node
 
 		currentUsername = username;
 		currentPassword = password;
+
+		GD.Print($"Succesfully saved {username}'s data!");
 
 		return true;
 	}
@@ -194,10 +204,16 @@ public partial class Data : Node
 			financialHistory.Add(Transaction.FromDict(item));
 		userData["financial history"] = financialHistory;
 
-		// Close the file.
-		// ...
-		// Return true.
-		file.Close();
+
+		// Current username is set to loaded username
+		// Current password is set to loaded password
+        currentUsername = username;
+        currentPassword = password;
+
+        // Close the file.
+        // ...
+        // Return true.
+        file.Close();
 		GD.Print($"Succesfully loaded {username}'s data!");
 		return true;
 	}
