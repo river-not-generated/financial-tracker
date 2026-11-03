@@ -54,13 +54,6 @@ offset_bottom = 78.0
 theme_override_constants/separation = 67
 alignment = 1
 
-[node name="MainMenu" type="Button" parent="Buttons" unique_id=1904711039]
-custom_minimum_size = Vector2(168, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Main Menu"
-script = ExtResource("2_i8s8o")
-
 [node name="FinancialGoals" type="Button" parent="Buttons" unique_id=648075432]
 custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
@@ -69,6 +62,13 @@ text = "Financial Goals
 "
 script = ExtResource("2_i8s8o")
 SceneGoTo = "Financial Goals"
+
+[node name="MainMenu" type="Button" parent="Buttons" unique_id=1904711039]
+custom_minimum_size = Vector2(168, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"
+script = ExtResource("2_i8s8o")
 
 [node name="TransactionHistory" type="Button" parent="Buttons" unique_id=1207892648]
 custom_minimum_size = Vector2(168, 0)

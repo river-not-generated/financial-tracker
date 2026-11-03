@@ -128,24 +128,30 @@ public partial class Data : Node
 		}
 
 		// Duplicates the dictionary.
-		// Grabs the current "financial history" and puts into a temporary array.
-		// Creates the new "financial history" array.
 		Dictionary dict = userData.Duplicate();
-		GDArray temp = (GDArray)userData["financial history"];
-		GDArray financialHistory = [];
 
+		// Creates the new "financial history" array.
+		// Grabs the current "financial history" and puts into a temporary array.
 		// Iterates through temp.
 			// Converts the transactions into dictionaries.
 		// Puts the converted "financial history" into the dictionary.
+		GDArray financialHistory = [];
+		GDArray temp = (GDArray)userData["financial history"];
 		foreach (Transaction item in temp)
 			financialHistory.Add((item).ToDict());
 		dict["financial history"] = financialHistory;
 
-		// Opens the file.
-		// Stores the stringified version of the dictionary.
-		// Closes the file.
-		// Returns true.
-		FileAccess file = FileAccess.OpenEncryptedWithPass($"user://{username}", FileAccess.ModeFlags.Write, password);
+		GDArray goals = [];
+        temp = (GDArray)userData["goals"];
+        foreach (Transaction item in temp)
+            financialHistory.Add((item).ToDict());
+        dict["goals"] = goals;
+
+        // Opens the file.
+        // Stores the stringified version of the dictionary.
+        // Closes the file.
+        // Returns true.
+        FileAccess file = FileAccess.OpenEncryptedWithPass($"user://{username}", FileAccess.ModeFlags.Write, password);
 		file.StoreLine(Json.Stringify(dict));
 		file.Close();
 
@@ -191,22 +197,28 @@ public partial class Data : Node
 		}
 
 		// Casts the parsed info into the userData dictionary. 
-		// Grabs the current "financial history" and puts into a temporary array.
-		// Creates the new "financial history" array.
 		userData = (Dictionary)parse;
-		GDArray temp = (GDArray)userData["financial history"];
-		GDArray financialHistory = [];
 
+		// Grabs the current "financial history" and puts into a temporary array.
+		// Creates the new "financial history" array
 		// Iterates through temp.
 			// Converts the dictionaries into transactions and adds them to the array.
 		// Puts the converted "financial history" into userData.
+		GDArray temp = (GDArray)userData["financial history"];
+		GDArray financialHistory = [];
 		foreach (Dictionary item in temp)
 			financialHistory.Add(Transaction.FromDict(item));
 		userData["financial history"] = financialHistory;
 
+		// Same as above, but for goals
+        temp = (GDArray)userData["goals"];
+        GDArray goals = [];
+        foreach (Dictionary item in temp)
+            financialHistory.Add(Transaction.FromDict(item));
+        userData["goals"] = financialHistory;
 
-		// Current username is set to loaded username
-		// Current password is set to loaded password
+        // Current username is set to loaded username
+        // Current password is set to loaded password
         currentUsername = username;
         currentPassword = password;
 

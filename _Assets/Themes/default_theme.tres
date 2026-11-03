@@ -62,4 +62,7 @@ Label/colors/font_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
 Label/colors/font_outline_color = Color(0, 0.02745098, 0.14117648, 1)
 Label/constants/outline_size = 8
 LineEdit/colors/font_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
+RichTextLabel/colors/default_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0.02745098, 0.14117648, 1)
+RichTextLabel/constants/outline_size = 8
 TextEdit/colors/font_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
