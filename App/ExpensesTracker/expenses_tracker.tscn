@@ -32,6 +32,7 @@ layout_mode = 0
 offset_top = 183.0
 offset_right = 1152.0
 offset_bottom = 257.0
+theme_override_colors/default_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Total Money: $-1,000.00"
 horizontal_alignment = 1
@@ -54,12 +55,14 @@ theme_override_constants/separation = 67
 alignment = 1
 
 [node name="MainMenu" type="Button" parent="Buttons" unique_id=1904711039]
+custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Main Menu"
 script = ExtResource("2_i8s8o")
 
 [node name="FinancialGoals" type="Button" parent="Buttons" unique_id=648075432]
+custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Financial Goals
@@ -68,6 +71,7 @@ script = ExtResource("2_i8s8o")
 SceneGoTo = "Financial Goals"
 
 [node name="TransactionHistory" type="Button" parent="Buttons" unique_id=1207892648]
+custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Transaction History
@@ -107,6 +111,7 @@ offset_left = -46.0
 offset_top = -7.0
 offset_right = 8.0
 offset_bottom = 68.0
+theme_override_colors/default_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
 theme_override_font_sizes/normal_font_size = 64
 text = "$"
 

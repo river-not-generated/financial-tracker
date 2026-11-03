@@ -14,12 +14,47 @@ offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("1_8nbqb")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=879401019]
+[node name="Background" type="ColorRect" parent="." unique_id=879401019]
 z_index = -1
 layout_mode = 0
 offset_right = 1151.0
 offset_bottom = 648.0
 color = Color(0.1608041, 0.19435754, 0.30922577, 1)
+
+[node name="TitleTitle" type="RichTextLabel" parent="." unique_id=1784357265]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 1152.0
+offset_bottom = 98.0
+theme_override_colors/default_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[wave]create a local account or login..."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleCreate" type="RichTextLabel" parent="." unique_id=118667453]
+layout_mode = 0
+offset_left = 219.0
+offset_right = 502.0
+offset_bottom = 206.0
+theme_override_colors/default_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
+theme_override_font_sizes/normal_font_size = 96
+text = "Create"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TitleLogin" type="RichTextLabel" parent="." unique_id=267910384]
+layout_mode = 0
+offset_left = 672.0
+offset_right = 881.0
+offset_bottom = 206.0
+theme_override_colors/default_color = Color(0.80784315, 0.8862745, 0.92156863, 1)
+theme_override_font_sizes/normal_font_size = 96
+text = "Login"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="MainMenuButton" type="Button" parent="." unique_id=737902244]
 visible = false

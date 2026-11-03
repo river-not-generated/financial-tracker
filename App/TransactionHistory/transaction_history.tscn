@@ -53,12 +53,14 @@ theme_override_constants/separation = 67
 alignment = 1
 
 [node name="MainMenu" type="Button" parent="Buttons" unique_id=2119967526]
+custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Main Menu"
 script = ExtResource("2_03suo")
 
 [node name="FinancialGoals" type="Button" parent="Buttons" unique_id=827065898]
+custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Financial Goals
@@ -67,6 +69,7 @@ script = ExtResource("2_03suo")
 SceneGoTo = "Financial Goals"
 
 [node name="ExpensesTracker" type="Button" parent="Buttons" unique_id=486446347]
+custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Expenses Tracker

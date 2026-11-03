@@ -80,12 +80,14 @@ theme_override_constants/separation = 67
 alignment = 1
 
 [node name="MainMenu" type="Button" parent="Buttons" unique_id=1624018766]
+custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Main Menu"
 script = ExtResource("2_cgnxp")
 
 [node name="ExpensesTracker" type="Button" parent="Buttons" unique_id=1261752852]
+custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Expenses Tracker
@@ -94,6 +96,7 @@ script = ExtResource("2_cgnxp")
 SceneGoTo = "Expenses Tracker"
 
 [node name="TransactionHistory" type="Button" parent="Buttons" unique_id=1938530536]
+custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Transaction History
