@@ -8,19 +8,21 @@ public partial class Data : Node
 	public override void _Ready()
 	{
 		Instance = this;
+		userData = USER_DATA.Duplicate();
 	}
 
 
 	#region Data
 	public static Data Instance { get; private set; }
-	private Dictionary userData = new Dictionary
-	{
-		{"money",			  0.0},
-		{"earnings",		  0.0},
-		{"spending",		  0.0},
-		{"financial history", new GDArray()},
-		{"goals",			  new GDArray()}
-	};
+	private Dictionary USER_DATA = new Dictionary
+    {
+        {"money",             0.0},
+        {"earnings",          0.0},
+        {"spending",          0.0},
+        {"financial history", new GDArray()},
+        {"goals",             new GDArray()}
+    };
+	private Dictionary userData;
 	public void Print()
 	{
 		GD.Print(userData);
@@ -169,7 +171,10 @@ public partial class Data : Node
 	}
 	public bool Load(string username, string password)
 	{
-		if (!DoesUserExist(username))
+        userData = USER_DATA.Duplicate();
+		GD.Print(userData);
+
+        if (!DoesUserExist(username))
 		{
 			GD.PushWarning($"{username} does not exist!");
 			return false;
@@ -225,6 +230,7 @@ public partial class Data : Node
 		// Close the file.
 		// ...
 		// Return true.
+		GD.Print(userData);
 		file.Close();
 		GD.Print($"Succesfully loaded {username}'s data!");
 		return true;
